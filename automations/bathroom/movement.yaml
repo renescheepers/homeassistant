@@ -1,0 +1,17 @@
+alias: 'Bathroom movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+    to: 'on'
+  - platform: numeric_state
+    entity_id: sensor.aeon_labs_zw100_multisensor_6_relative_humidity
+    above: '95'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.aeon_labs_zw100_multisensor_6_luminance
+    below: '10'
+action:
+  - type: turn_on
+    device_id: switch.shelly_shsw_1_e09806967aec
+    entity_id: switch.shelly_shsw_1_e09806967aec
+    domain: switch

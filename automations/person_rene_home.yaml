@@ -1,0 +1,21 @@
+alias: 'Person Rene home'
+trigger:
+  - platform: state
+    entity_id: person.rene
+    from: 'not_home'
+    to: 'home'
+condition:
+  - condition: state
+    entity_id: input_boolean.security
+    state: 'on'
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.security
+  - service: notify.mobile_app_iphone_van_elle
+    data:
+      title: Rene is now home
+      message: Rene has arrived home, security has been disabled
+      data:
+        push:
+          sound: "US-EN-Morgan-Freeman-Boyfriend-Is-Arriving.wav"
+

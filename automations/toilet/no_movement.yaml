@@ -1,0 +1,11 @@
+alias: 'Toilet no movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.toilet_motion_sensor_occupancy
+    from: 'on'
+    to: 'off'
+action:
+  - type: turn_off
+    device_id: light.toilet_light
+    entity_id: light.toilet_light
+    domain: light

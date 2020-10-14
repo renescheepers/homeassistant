@@ -1,0 +1,20 @@
+alias: Televisie aan
+trigger:
+  - platform: state
+    entity_id: media_player.tv
+    from: 'off'
+    to: 'on'
+  - platform: sun
+    event: sunset
+condition:
+  - condition: sun
+    after: sunset
+  - condition: state
+    entity_id: media_player.tv
+    state: 'on'
+action:
+  - type: turn_on
+    device_id: light.living_room_corner_light
+    entity_id: light.living_room_corner_light
+    domain: light
+    brightness_pct: 50

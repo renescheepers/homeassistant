@@ -1,0 +1,14 @@
+alias: 'Kitchen no movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion_sensor_occupancy
+    from: 'on'
+    to: 'off'
+action:
+  - service: light.turn_off
+    entity_id: group.kitchen
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/Kitchen/set/state
+      payload: 'OFF'
+  

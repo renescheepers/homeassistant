@@ -1,0 +1,115 @@
+config:
+frontend:
+mobile_app:
+sun:
+system_health:
+updater:
+input_boolean:
+  security:
+    name: Security
+input_datetime:
+  attic_last_movement:
+    name: Attic last movement detected
+    has_date: true
+    has_time: true
+  bathroom_last_movement:
+    name: Bathroom last movement detected
+    has_date: true
+    has_time: true
+  hall_downstairs_last_movement:
+    name: Hall downstairs last movement detected
+    has_date: true
+    has_time: true
+  hall_upstairs_last_movement:
+    name: Hall upstairs last movement detected
+    has_date: true
+    has_time: true
+  kitchen_last_movement:
+    name: Kitchen last movement detected
+    has_date: true
+    has_time: true
+  toilet_last_movement:
+    name: Toilet last movement detected
+    has_date: true
+    has_time: true
+input_select:
+
+homeassistant:
+  name: Woensel
+  external_url: !secret homeassistant_external_url
+  internal_url: http://192.168.1.231:8123
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  unit_system: metric
+  time_zone: Europe/Amsterdam
+  customize: !include customize.yaml
+
+logger:
+  default: info
+  logs:
+    homeassistant.components.rfxtrx: info
+    custom_components.shelly: info
+
+
+automation: !include automations.yaml
+automation mine: !include_dir_list automations/
+binary_sensor mine: !include_dir_list binary_sensors/
+device_tracker: !include device_trackers.yaml
+group: !include groups.yaml
+history: !include history.yaml
+logbook: !include logbook.yaml
+person: !include persons.yaml
+scene: !include scenes.yaml
+sensor: !include sensors.yaml
+script: !include scripts.yaml
+
+http:
+  use_x_forwarded_for: true
+  trusted_proxies: 192.168.2.0/24
+  server_port: 80
+
+recorder:
+  db_url: !secret recorder_db_url
+
+media_player:
+webostv:
+  host: 192.168.1.193
+  name: TV
+  customize:
+    sources:
+      - youtube
+      - netflix
+
+rfxtrx:
+  device: /dev/ttyUSB1
+  debug: true
+  automatic_add: false
+  devices:
+    09130002177a0a01ca60:
+      device_class: opening
+      data_bits: 4
+      command_on: 0xa
+      command_off: 0xe
+
+mqtt:
+  broker: mqtt
+  port: 1883
+  discovery: true
+
+zwave:
+  usb_path: /dev/ttyUSB0
+  network_key: !secret zwave_network_key
+
+shelly:
+  discovery: true
+  cloud_auth_key: !secret shelly_cloud_auth_key
+  cloud_server: !secret shelly_cloud_server
+  discover_by_ip:
+    - 192.168.1.131
+    - 192.168.1.148
+    - 192.168.1.197
+    - 192.168.1.205
+    - 192.168.1.215
+
+lovelace:
+  mode: yaml

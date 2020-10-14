@@ -1,0 +1,26 @@
+alias: 'Attic movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.attic_sensor_occupancy
+    from: 'off'
+    to: 'on'
+action:
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.attic_last_movement
+    data_template:
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+  - service: 'light.turn_on'
+    data_template:
+      entity_id:
+        - light.attic_1_light
+        - light.attic_2_light
+      brightness_pct: >
+        {%- if states('sensor.attic_sensor_illuminance_lux') | float > 10 -%}
+          0.0
+        {%- else %}
+          {%- if now().hour < 8 or now().hour > 21 -%}
+            30
+          {%- else -%}
+            80
+          {%- endif -%}
+        {%- endif -%}

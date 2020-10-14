@@ -1,0 +1,24 @@
+include:
+  entities:
+    - binary_sensor.pt2262_177a0a
+    - binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+    - binary_sensor.attic_sensor_occupancy
+    - binary_sensor.hall_downstairs_sensor_occupancy
+    - binary_sensor.hall_upstairs_sensor_occupancy
+    - binary_sensor.kitchen_motion_sensor_occupancy
+    - binary_sensor.toilet_motion_sensor_occupancy
+    - cover.shelly_shsw_25_40f520230e53
+    - sensor.attic_sensor_temperature
+    - sensor.hall_downstairs_sensor_temperature
+    - sensor.hall_upstairs_sensor_temperature
+    - sensor.kitchen_motion_sensor_temperature
+    - sensor.toilet_motion_sensor_temperature
+    - sensor.aeon_labs_zw100_multisensor_6_relative_humidity
+    - sensor.aeon_labs_zw100_multisensor_6_temperature
+    - sensor.aeon_labs_zw100_multisensor_6_luminance
+    - sensor.attic_sensor_illuminance_lux
+    - sensor.hall_upstairs_sensor_illuminance_lux
+    - sensor.hall_downstairs_sensor_illuminance_lux
+    - sensor.kitchen_motion_sensor_illuminance_lux
+    - sensor.toilet_motion_sensor_illuminance_lux
+    - switch.shelly_shsw_1_e09806965deb

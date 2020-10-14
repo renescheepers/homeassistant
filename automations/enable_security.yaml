@@ -1,0 +1,42 @@
+alias: 'Enable security'
+trigger:
+  - platform: state
+    entity_id:
+      - person.elle
+      - person.rene
+    from: 'home'
+    to: 'not_home'
+    for: 60
+condition:
+  - condition: state
+    entity_id:
+      - person.elle
+      - person.rene
+    state: 'not_home'
+  - condition: state
+    entity_id: input_boolean.security
+    state: 'off'
+action:
+  - choose:
+    - conditions:
+        - condition: state
+          entity_id: media_player.tv
+          state: 'on'
+      sequence:
+        - service: media_player.turn_off
+          data:
+            entity_id: media_player.tv
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.security
+  - service: media_player.turn_on
+    data:
+      entity_id: media_player.tv
+  - service: notify.mobile_app_skeepaars
+    data:
+      title: Security enabled
+      message: No one is home, security has been enabled
+  - service: notify.mobile_app_iphone_van_elle
+    data:
+      title: Security enabled
+      message: No one is home, security has been enabled
+

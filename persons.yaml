@@ -1,0 +1,10 @@
+- id: rene
+  name: Rene
+  user_id: aeba19b583c248b39ca9f3782a17089b
+  device_trackers:
+    - device_tracker.skeepaars
+- id: elle
+  name: Elle
+  user_id: c0c67dc09cc64408aaceefe7e3b3410f
+  device_trackers:
+    - device_tracker.iphone_van_elle

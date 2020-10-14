@@ -1,0 +1,11 @@
+alias: Master bedroom nightstand button 2
+trigger:
+  - platform: mqtt
+    topic: zigbee2mqtt/Master bedroom dimmer switch nightstand/action
+    payload: up-press
+action:
+  - device_id: d0ced55358da4d0289bf00f1bd2dde6d
+    domain: cover
+    entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
+    position: 75
+    type: set_position

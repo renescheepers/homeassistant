@@ -1,0 +1,28 @@
+alias: 'Security movement'
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.attic_last_movement
+      - sensor.bathroom_last_movement
+      - sensor.hall_downstairs_last_movement
+      - sensor.hall_upstairs_last_movement
+      - sensor.hall_kitchen_last_movement
+      - sensor.hall_toilet_last_movement
+condition:
+  - condition: state
+    entity_id: input_boolean.security
+    state: 'on'
+action:
+  - service: notify.mobile_app_skeepaars
+    data:
+      message: Movement has been detected in your home
+      data:
+        push:
+          sound: "US-EN-Morgan-Freeman-Motion-Detected.wav"
+  - service: notify.mobile_app_iphone_van_elle
+    data:
+      message: Movement has been detected in your home
+      data:
+        push:
+          sound: "US-EN-Morgan-Freeman-Motion-Detected.wav"
+

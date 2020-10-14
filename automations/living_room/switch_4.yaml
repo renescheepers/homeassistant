@@ -1,0 +1,13 @@
+alias: Living room switch button 4
+trigger:
+  - platform: mqtt
+    topic: zigbee2mqtt/Living room switch/action
+    payload: recall_scene_2
+action:
+  - service: light.toggle
+    entity_id:
+      - light.dressoir_light
+      - light.living_room_closet_light
+      - light.living_room_open_closet_light
+    data:
+      brightness_pct: 50

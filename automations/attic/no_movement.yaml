@@ -1,0 +1,13 @@
+alias: 'Attic no movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.attic_sensor_occupancy
+    from: 'on'
+    to: 'off'
+action:
+  - service: light.turn_off
+    entity_id: group.attic
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/Attic/set/state
+      payload: 'OFF'

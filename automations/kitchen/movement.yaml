@@ -1,0 +1,29 @@
+alias: 'Kitchen movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion_sensor_occupancy
+    from: 'off'
+    to: 'on'
+action:
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.kitchen_last_movement
+    data_template:
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+  - service: 'light.turn_on'
+    data_template:
+      entity_id:
+        - light.kitchen_1_light
+        - light.kitchen_2_light
+        - light.kitchen_3_light
+        - light.kitchen_4_light
+      brightness_pct: >
+        {%- if states('sensor.kitchen_motion_sensor_illuminance_lux') | float > 10 -%}
+          0.0
+        {%- else %}
+          {%- if now().hour < 8 or now().hour > 21 -%}
+            30
+          {%- else -%}
+            80
+          {%- endif -%}
+        {%- endif -%}
+

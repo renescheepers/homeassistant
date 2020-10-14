@@ -1,0 +1,11 @@
+alias: 'Hall upstairs no movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_upstairs_sensor_occupancy
+    from: 'on'
+    to: 'off'
+action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/Hall upstairs/set/state
+      payload: 'off'

@@ -1,0 +1,10 @@
+alias: Master bedroom wall button 4
+trigger:
+  - platform: mqtt
+    topic: zigbee2mqtt/Master bedroom dimmer switch wall/action
+    payload: off-press
+action:
+  - type: turn_off
+    device_id: light.master_bedroom_light
+    entity_id: light.master_bedroom_light
+    domain: light

@@ -1,0 +1,15 @@
+alias: 'Toilet movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.toilet_motion_sensor_occupancy
+    from: 'off'
+    to: 'on'
+action:
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.toilet_last_movement
+    data_template:
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+  - type: turn_on
+    device_id: light.toilet_light
+    entity_id: light.toilet_light
+    domain: light

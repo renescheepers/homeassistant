@@ -1,0 +1,23 @@
+alias: 'Front door close or no movement'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.pt2262_177a0a
+    from: 'on'
+    to: 'off'
+  - platform: state
+    entity_id: binary_sensor.hall_downstairs_sensor_occupancy
+    from: 'on'
+    to: 'off'
+condition:
+  - condition: state
+    entity_id: binary_sensor.hall_downstairs_sensor_occupancy
+    state: 'off'
+  - condition: state
+    entity_id: binary_sensor.pt2262_177a0a
+    state: 'off'
+action:
+  - service: 'light.turn_off'
+    data:
+      entity_id:
+        - light.hall_downstairs_1_light
+        - light.hall_downstairs_2_light

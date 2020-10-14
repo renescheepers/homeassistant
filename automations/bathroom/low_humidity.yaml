@@ -1,0 +1,10 @@
+alias: 'Bathroom low humidity'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.aeon_labs_zw100_multisensor_6_relative_humidity
+    below: '70'
+action:
+  - type: turn_off
+    device_id: switch.shelly_shsw_1_e09806965deb
+    entity_id: switch.shelly_shsw_1_e09806965deb
+    domain: switch
