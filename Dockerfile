@@ -9,3 +9,5 @@ ADD https://github.com/StyraHem/ShellyForHASS/releases/download/0.2.0/shelly4has
 RUN unzip /tmp/shelly4hass.zip -d /config/custom_components/shelly
 
 RUN rm -f /tmp/shelly4hass.zip
+
+VOLUME /config/.storage
