@@ -1,0 +1,15 @@
+alias: 'Holiday living room on'
+trigger:
+  - platform: time
+    at: '19:00:00'
+action:
+  - type: turn_on
+    device_id: d42825c70bcb11eba9d1a9bbe3e60c2c
+    entity_id: light.living_room_open_closet_light
+    domain: light
+    brightness_pct: 1
+  - type: turn_on
+    device_id: d41f55670bcb11ebaa99c91dce53c826
+    entity_id: light.living_room_corner_light
+    domain: light
+    brightness_pct: 35

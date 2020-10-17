@@ -1,0 +1,13 @@
+alias: 'Holiday living room ooff'
+trigger:
+  - platform: time
+    at: '23:15:00'
+action:
+  - type: turn_off
+    device_id: d41f55670bcb11ebaa99c91dce53c826
+    entity_id: light.living_room_corner_light
+    domain: light
+  - type: turn_off
+    device_id: d42825c70bcb11eba9d1a9bbe3e60c2c
+    entity_id: light.living_room_open_closet_light
+    domain: light

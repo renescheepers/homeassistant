@@ -4,3 +4,9 @@ trigger:
     topic: zigbee2mqtt/Master bedroom dimmer switch wall/action
     payload: up-press
 action:
+  - service: light.toggle
+    entity_id:
+      - light.master_bedroom_light
+    data:
+      brightness_pct: 100
+      color_name: white
