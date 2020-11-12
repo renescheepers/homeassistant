@@ -11,4 +11,3 @@ RUN unzip /tmp/shelly4hass.zip -d /config/custom_components/shelly
 RUN rm -f /tmp/shelly4hass.zip
 
 VOLUME /config/.storage
-VOLUME /config/zwave
