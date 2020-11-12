@@ -4,10 +4,14 @@ trigger:
     topic: zigbee2mqtt/Living room switch/action
     payload: recall_scene_2
 action:
-  - service: light.toggle
+  - service: light.turn_on
     entity_id:
       - light.dressoir_light
+    data:
+      brightness_pct: 50
+  - service: light.turn_on
+    entity_id:
       - light.living_room_closet_light
       - light.living_room_open_closet_light
     data:
-      brightness_pct: 50
+      brightness_pct: 10
