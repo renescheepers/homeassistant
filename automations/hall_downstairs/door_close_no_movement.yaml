@@ -18,5 +18,5 @@ condition:
 action:
   - service: mqtt.publish
     data:
-      topic: zigbee2mqtt/hall_downstiars/set/state
+      topic: zigbee2mqtt/hall_downstairs/set/state
       payload: 'OFF'
