@@ -13,7 +13,7 @@ action:
       - conditions:
           - condition: numeric_state
             entity_id: sensor.kitchen_motion_sensor_illuminance_lux
-            above: '10'
+            below: '10'
         sequence:
           - choose:
               - conditions:
