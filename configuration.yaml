@@ -37,7 +37,7 @@ input_select:
 homeassistant:
   name: Woensel
   external_url: !secret homeassistant_external_url
-  internal_url: http://192.168.1.231:8123
+  internal_url: http://192.168.1.107:8123
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
   unit_system: metric
