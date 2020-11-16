@@ -92,6 +92,12 @@ mqtt:
   broker: mqtt
   port: 1883
   discovery: true
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 zwave:
   usb_path: /dev/ttyUSB0
