@@ -9,19 +9,18 @@ action:
     entity_id: input_datetime.toilet_last_movement
     data_template:
       datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
-  - sequence:
-      - choose:
-          - conditions:
-              - condition: time
-                before: '08:00:00'
-                after: '20:00:00'
-            sequence:
-              - service: mqtt.publish
-                data:
-                  topic: zigbee2mqtt/Toilet/set
-                  payload: '{"brightness":50,"color_temp":400,"state":"ON"}'
-        default:
+  - choose:
+      - conditions:
+          - condition: time
+            before: '08:00:00'
+            after: '20:00:00'
+        sequence:
           - service: mqtt.publish
             data:
               topic: zigbee2mqtt/Toilet/set
-              payload: '{"brightness":255,"color_temp":50,"state":"ON"}'
+              payload: '{"brightness":50,"color_temp":400,"state":"ON"}'
+    default:
+      - service: mqtt.publish
+        data:
+          topic: zigbee2mqtt/Toilet/set
+          payload: '{"brightness":255,"color_temp":50,"state":"ON"}'
