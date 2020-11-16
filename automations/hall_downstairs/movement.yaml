@@ -1,7 +1,11 @@
-alias: 'Hall downstairs movement'
+alias: 'Hall downstairs movement or door opened'
 trigger:
   - platform: state
     entity_id: binary_sensor.hall_downstairs_sensor_occupancy
+    from: 'off'
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.pt2262_177a0a
     from: 'off'
     to: 'on'
 action:
@@ -9,18 +13,24 @@ action:
     entity_id: input_datetime.hall_downstairs_last_movement
     data_template:
       datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
-  - service: 'light.turn_on'
-    data_template:
-      entity_id:
-        - light.hall_downstairs_1_light
-        - light.hall_downstairs_2_light
-      brightness_pct: >
-        {%- if states('sensor.hall_downstairs_sensor_illuminance_lux') | float > 10 -%}
-          0.0
-        {%- else %}
-          {%- if now().hour < 8 or now().hour > 21 -%}
-            30
-          {%- else -%}
-            80
-          {%- endif -%}
-        {%- endif -%}
+  - choose:
+      - conditions:
+          - condition: numeric_state
+            entity_id: sensor.hall_downstairs_sensor_illuminance_lux
+            below: '10'
+        sequence:
+          - choose:
+              - conditions:
+                  - condition: time
+                    before: '08:00:00'
+                    after: '20:00:00'
+                sequence:
+                  - service: mqtt.publish
+                    data:
+                      topic: zigbee2mqtt/hall_downstairs/set
+                      payload: '{"brightness":50,"color_temp":400,"state":"ON"}'
+            default:
+              - service: mqtt.publish
+                data:
+                  topic: zigbee2mqtt/hall_downstairs/set
+                  payload: '{"brightness":255,"color_temp":50,"state":"ON"}'

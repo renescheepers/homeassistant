@@ -16,8 +16,7 @@ condition:
     entity_id: binary_sensor.pt2262_177a0a
     state: 'off'
 action:
-  - service: 'light.turn_off'
+  - service: mqtt.publish
     data:
-      entity_id:
-        - light.hall_downstairs_1_light
-        - light.hall_downstairs_2_light
+      topic: zigbee2mqtt/hall_downstairs/set/state
+      payload: 'OFF'

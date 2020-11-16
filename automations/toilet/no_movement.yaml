@@ -5,7 +5,7 @@ trigger:
     from: 'on'
     to: 'off'
 action:
-  - type: turn_off
-    device_id: light.toilet_light
-    entity_id: light.toilet_light
-    domain: light
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/Toilet/set/state
+      payload: 'OFF'

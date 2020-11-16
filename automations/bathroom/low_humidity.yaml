@@ -5,6 +5,6 @@ trigger:
     below: '85'
 action:
   - type: turn_off
-    device_id: switch.shelly_shsw_1_e09806965deb
-    entity_id: switch.shelly_shsw_1_e09806965deb
+    device_id: switch.bathroom_fan
+    entity_id: switch.bathroom_fan
     domain: switch

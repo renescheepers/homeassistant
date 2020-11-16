@@ -37,7 +37,7 @@ input_select:
 homeassistant:
   name: Woensel
   external_url: !secret homeassistant_external_url
-  internal_url: http://192.168.1.231:8123
+  internal_url: http://192.168.1.107:8123
   latitude: !secret homeassistant_latitude
   longitude: !secret homeassistant_longitude
   unit_system: metric
@@ -55,13 +55,10 @@ automation: !include automations.yaml
 automation mine: !include_dir_list automations/
 binary_sensor mine: !include_dir_list binary_sensors/
 device_tracker: !include device_trackers.yaml
-group: !include groups.yaml
 history: !include history.yaml
 logbook: !include logbook.yaml
 person: !include persons.yaml
-scene: !include scenes.yaml
 sensor: !include sensors.yaml
-script: !include scripts.yaml
 
 http:
   use_x_forwarded_for: true
@@ -95,10 +92,17 @@ mqtt:
   broker: mqtt
   port: 1883
   discovery: true
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 zwave:
   usb_path: /dev/ttyUSB0
   network_key: !secret zwave_network_key
+  device_config: !include zwave_device_config.yaml
 
 shelly:
   discovery: true
@@ -113,3 +117,22 @@ shelly:
 
 lovelace:
   mode: yaml
+
+switch:
+  - platform: mqtt
+    icon: mdi:lightbulb-group
+    unique_id: bathroom_lights
+    name: "Bathroom lights"
+    state_topic: "shellies/shelly1-E09806967AEC/relay/0"
+    command_topic: "shellies/shelly1-E09806967AEC/relay/0/command"
+    payload_off: "off"
+    payload_on: "on"
+    retain: true
+  - platform: mqtt
+    icon: mdi:fan
+    unique_id: bathroom_fan
+    name: "Bathroom fan"
+    state_topic: "shellies/shelly1-E09806965DEB/relay/0"
+    command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
+    payload_off: "off"
+    payload_on: "on"
