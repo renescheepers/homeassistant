@@ -118,14 +118,14 @@ shelly:
 lovelace:
   mode: yaml
 
-#switch:
-#  - platform: mqtt
-#    unique_id: bathroom_lights
-#    name: "Bathroom lights"
-#    state_topic: "shellies/shelly1-E09806967AEC/relay/0"
-#    command_topic: "shellies/shelly1-E09806967AEC/relay/0/command"
-#  - platform: mqtt
-#    unique_id: bathroom_fan
-#    name: "Bathroom fan"
-#    state_topic: "shellies/shelly1-E09806965DEB/relay/0"
-#    command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
+switch:
+  - platform: mqtt
+    unique_id: bathroom_lights
+    name: "Bathroom lights"
+    state_topic: "shellies/shelly1-E09806967AEC/relay/0"
+    command_topic: "shellies/shelly1-E09806967AEC/relay/0/command"
+  - platform: mqtt
+    unique_id: bathroom_fan
+    name: "Bathroom fan"
+    state_topic: "shellies/shelly1-E09806965DEB/relay/0"
+    command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
