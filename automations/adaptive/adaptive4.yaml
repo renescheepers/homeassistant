@@ -1,4 +1,10 @@
 alias: 'adaptive 4'
+
+trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_upstairs_sensor_occupancy
+    from: 'off'
+    to: 'on'
 action:
   - service: mqtt.publish
     data:
