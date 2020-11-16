@@ -1,0 +1,6 @@
+alias: 'adaptive 4'
+action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/TV 1/set
+      payload: '{"brightness":254,"color_temp":100}'
