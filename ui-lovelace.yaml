@@ -67,8 +67,8 @@ views:
               - entity: sensor.aeon_labs_zw100_multisensor_6_temperature
               - entity: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
               - entity: sensor.aeon_labs_zw100_multisensor_6_relative_humidity
-              - entity: switch.shelly_shsw_1_e09806967aec
-              - entity: switch.shelly_shsw_1_e09806965deb
+              - entity: switch.bathroom_lights
+              - entity: switch.bathroom_fan
             title: Bathroom
           - type: entities
             entities:

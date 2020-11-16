@@ -12,6 +12,6 @@ condition:
     below: '10'
 action:
   - type: turn_on
-    device_id: switch.shelly_shsw_1_e09806967aec
-    entity_id: switch.shelly_shsw_1_e09806967aec
+    device_id: switch.bathroom_lights
+    entity_id: switch.bathroom_lights
     domain: switch

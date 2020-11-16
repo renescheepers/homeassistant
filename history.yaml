@@ -21,4 +21,4 @@ include:
     - sensor.hall_downstairs_sensor_illuminance_lux
     - sensor.kitchen_motion_sensor_illuminance_lux
     - sensor.toilet_motion_sensor_illuminance_lux
-    - switch.shelly_shsw_1_e09806965deb
+    - switch.bathroom_fan

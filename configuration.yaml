@@ -120,12 +120,19 @@ lovelace:
 
 switch:
   - platform: mqtt
+    icon: mdi:lightbulb-group
     unique_id: bathroom_lights
     name: "Bathroom lights"
     state_topic: "shellies/shelly1-E09806967AEC/relay/0"
     command_topic: "shellies/shelly1-E09806967AEC/relay/0/command"
+    payload_off: "off"
+    payload_on: "on"
+    retain: true
   - platform: mqtt
+    icon: mdi:fan
     unique_id: bathroom_fan
     name: "Bathroom fan"
     state_topic: "shellies/shelly1-E09806965DEB/relay/0"
     command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
+    payload_off: "off"
+    payload_on: "on"
