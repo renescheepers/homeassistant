@@ -55,13 +55,10 @@ automation: !include automations.yaml
 automation mine: !include_dir_list automations/
 binary_sensor mine: !include_dir_list binary_sensors/
 device_tracker: !include device_trackers.yaml
-group: !include groups.yaml
 history: !include history.yaml
 logbook: !include logbook.yaml
 person: !include persons.yaml
-scene: !include scenes.yaml
 sensor: !include sensors.yaml
-script: !include scripts.yaml
 
 http:
   use_x_forwarded_for: true

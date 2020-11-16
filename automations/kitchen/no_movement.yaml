@@ -5,10 +5,8 @@ trigger:
     from: 'on'
     to: 'off'
 action:
-  - service: light.turn_off
-    entity_id: group.kitchen
   - service: mqtt.publish
     data:
-      topic: zigbee2mqtt/Kitchen/set/state
+      topic: zigbee2mqtt/kitchen/set/state
       payload: 'OFF'
   

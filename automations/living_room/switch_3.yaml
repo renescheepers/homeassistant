@@ -4,7 +4,7 @@ trigger:
     topic: zigbee2mqtt/Living room switch/action
     payload: recall_scene_1
 action:
-  - service: light.turn_on
-    entity_id: group.living_room_dining
+  - service: mqtt.publish
     data:
-      brightness_pct: 50
+      topic: zigbee2mqtt/living_room_dining/set/state
+      payload: 'ON'
