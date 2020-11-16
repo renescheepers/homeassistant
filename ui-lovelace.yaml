@@ -74,8 +74,6 @@ views:
             entities:
               - entity: light.pc_1_light
               - entity: light.pc_2_light
-              - entity: sensor.shelly_shplg_s_9a3135_current_consumption
-              - entity: switch.shelly_shplg_s_9a3135
             title: Study
       - type: vertical-stack
         cards:
