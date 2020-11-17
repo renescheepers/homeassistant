@@ -7,7 +7,6 @@ include:
     - binary_sensor.hall_upstairs_sensor_occupancy
     - binary_sensor.kitchen_motion_sensor_occupancy
     - binary_sensor.toilet_motion_sensor_occupancy
-    - cover.shelly_shsw_25_40f520230e53
     - sensor.attic_sensor_temperature
     - sensor.hall_downstairs_sensor_temperature
     - sensor.hall_upstairs_sensor_temperature

@@ -79,7 +79,6 @@ webostv:
 
 rfxtrx:
   device: /dev/ttyUSB1
-  debug: true
   automatic_add: false
   devices:
     09130002177a0a01ca60:
@@ -104,17 +103,6 @@ zwave:
   network_key: !secret zwave_network_key
   device_config: !include zwave_device_config.yaml
 
-shelly:
-  discovery: true
-  cloud_auth_key: !secret shelly_cloud_auth_key
-  cloud_server: !secret shelly_cloud_server
-  discover_by_ip:
-    - 192.168.1.131
-    - 192.168.1.148
-    - 192.168.1.197
-    - 192.168.1.205
-    - 192.168.1.215
-
 lovelace:
   mode: yaml
 
@@ -136,3 +124,15 @@ switch:
     command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
     payload_off: "off"
     payload_on: "on"
+
+cover:
+  - platform: mqtt
+    name: "Living room garden cover"
+    unique_id: "living_room_garden_cover"
+    command_topic: "shellies/shellyswitch25-40F520230E53/roller/0/command"
+    position_topic: "shellies/shellyswitch25-40F520230E53/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-40F520230E53/roller/0/command/pos"
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    retain: true

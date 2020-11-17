@@ -7,5 +7,5 @@ trigger:
 action:
   - service: mqtt.publish
     data:
-      topic: zigbee2mqtt/Attic/set/state
+      topic: zigbee2mqtt/attic/set/state
       payload: 'OFF'

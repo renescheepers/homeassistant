@@ -10,7 +10,6 @@ views:
           - type: entities
             entities:
               - entity: media_player.tv
-              - entity: cover.shelly_shsw_25_40f520230e53
               - entity: light.tv_1_light
               - entity: light.tv_2_light
               - entity: light.living_room_corner_light
