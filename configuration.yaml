@@ -70,10 +70,15 @@ recorder:
 
 media_player:
 webostv:
-  host: 192.168.1.193
+  host: 192.168.1.192
   name: TV
   customize:
     sources:
+      - spotify
+      - hdmi1
+      - hdmi2
+      - hdmi3
+      - hdmi4
       - youtube
       - netflix
 

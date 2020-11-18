@@ -2,6 +2,7 @@ alias: 'Bathroom no movement'
 trigger:
   - platform: state
     entity_id: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
+    from: 'on'
     to: 'off'
   - platform: numeric_state
     entity_id: sensor.aeon_labs_zw100_multisensor_6_relative_humidity
