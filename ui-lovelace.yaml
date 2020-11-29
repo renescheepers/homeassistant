@@ -8,6 +8,7 @@ views:
       - type: vertical-stack
         cards:
           - type: entities
+            title: Living room
             entities:
               - entity: media_player.tv
               - entity: light.tv_1_light
@@ -19,7 +20,7 @@ views:
               - entity: light.dining_1_light
               - entity: light.dining_2_light
               - entity: light.dining_3_light
-            title: Living room
+              - entity: switch.christmas_tree
             state_color: false
           - type: entities
             entities:

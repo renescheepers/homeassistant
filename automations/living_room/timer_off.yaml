@@ -1,0 +1,8 @@
+alias: 'Christmas tree timer off'
+trigger:
+  - platform: time
+    at: '23:15:00'
+action:
+  - service: switch.turn_off
+    data:
+      entity_id: switch.christmas_tree

@@ -1,0 +1,9 @@
+alias: 'Garden timer off'
+trigger:
+  - platform: time
+    at: '23:15:00'
+action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/Shed/set/state
+      payload: 'OFF'
