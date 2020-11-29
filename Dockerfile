@@ -1,4 +1,4 @@
-FROM homeassistant/home-assistant:0.117.6
+FROM homeassistant/home-assistant:0.118.4
 
 COPY . /config/.
 

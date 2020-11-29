@@ -131,8 +131,7 @@ switch:
     payload_on: "on"
   - platform: mqtt
     icon: mdi:lightbulb-group
-    unique_id: christmas_tree
-    name: "Christmass tree"
+    name: "Christmas tree"
     state_topic: "shellies/shellyplug-s-978063/relay/0"
     command_topic: "shellies/shellyplug-s-978063/relay/0/command"
     payload_off: "off"
