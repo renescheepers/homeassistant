@@ -1,7 +1,7 @@
 alias: 'Garden timer off'
 trigger:
   - platform: time
-    at: '23:15:00'
+    at: '23:00:00'
 action:
   - service: mqtt.publish
     data:

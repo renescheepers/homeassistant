@@ -1,0 +1,10 @@
+alias: 'PC on'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.pc_power
+    above: '10'
+action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/study/set/state
+      payload: 'ON'

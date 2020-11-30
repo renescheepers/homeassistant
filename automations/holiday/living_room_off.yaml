@@ -1,4 +1,4 @@
-alias: 'Holiday living room ooff'
+alias: 'Holiday living room off'
 trigger:
   - platform: time
     at: '23:15:00'

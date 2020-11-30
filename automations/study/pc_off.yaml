@@ -1,0 +1,10 @@
+alias: 'PC off'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.pc_power
+    below: '11'
+action:
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/study/set/state
+      payload: 'OFF'

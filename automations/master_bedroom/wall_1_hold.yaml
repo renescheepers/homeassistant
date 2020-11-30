@@ -4,8 +4,7 @@ trigger:
     topic: zigbee2mqtt/Master bedroom dimmer switch wall/action
     payload: on-hold
 action:
-  - type: turn_on
-    device_id: light.master_bedroom_light
-    entity_id: light.master_bedroom_light
-    domain: light
-    brightness_pct: 100
+  - service: mqtt.publish
+    data:
+      topic: zigbee2mqtt/Master bedroom/set
+      payload: '{"brightness":255,"color_temp":400,"state":"ON"}'
