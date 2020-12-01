@@ -1,124 +1,53 @@
 title: Woensel
 views:
-  - badges:
-      - entity: person.elle
-      - entity: person.rene
-      - entity: sun.sun
+  - title: Overview
+    panel: true
+    badges: []
     cards:
       - type: vertical-stack
         cards:
-          - type: entities
-            title: Living room
-            entities:
-              - entity: media_player.tv
-              - entity: light.tv_1_light
-              - entity: light.tv_2_light
-              - entity: light.living_room_corner_light
-              - entity: light.living_room_closet_light
-              - entity: light.living_room_open_closet_light
-              - entity: light.dressoir_light
-              - entity: light.dining_1_light
-              - entity: light.dining_2_light
-              - entity: light.dining_3_light
-              - entity: switch.christmas_tree
-            state_color: false
-          - type: entities
-            entities:
-              - entity: binary_sensor.kitchen_motion_sensor_occupancy
-              - entity: sensor.kitchen_motion_sensor_temperature
-              - entity: light.kitchen_1_light
-              - entity: light.kitchen_2_light
-              - entity: light.kitchen_3_light
-              - entity: light.kitchen_4_light
-            title: Kitchen
-          - type: entities
-            entities:
-              - entity: binary_sensor.pt2262_177a0a
-              - entity: binary_sensor.hall_downstairs_sensor_occupancy
-              - entity: sensor.hall_downstairs_sensor_temperature
-              - entity: light.hall_downstairs_1_light
-              - entity: light.hall_downstairs_2_light
-            title: Hall downstairs
-          - type: entities
-            entities:
-              - entity: binary_sensor.toilet_motion_sensor_occupancy
-              - entity: sensor.toilet_motion_sensor_temperature
-              - entity: light.toilet_light
-            title: Toilet
-      - entity: weather.home
-        show_forecast: true
-        type: weather-forecast
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: binary_sensor.hall_upstairs_sensor_occupancy
-              - entity: sensor.hall_upstairs_sensor_temperature
-              - entity: light.hall_upstairs_1_light
-              - entity: light.hall_upstairs_2_light
-            title: Hall upstairs
-          - type: entities
-            entities:
-              - entity: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
-              - entity: light.master_bedroom_light
-            title: Master bedroom
-          - type: entities
-            entities:
-              - entity: sensor.aeon_labs_zw100_multisensor_6_temperature
-              - entity: binary_sensor.aeon_labs_zw100_multisensor_6_sensor
-              - entity: sensor.aeon_labs_zw100_multisensor_6_relative_humidity
-              - entity: switch.bathroom_lights
-              - entity: switch.bathroom_fan
-            title: Bathroom
-          - type: entities
-            entities:
-              - entity: light.pc_1_light
-              - entity: light.pc_2_light
-            title: Study
-      - type: vertical-stack
-        cards:
-          - type: entities
-            entities:
-              - entity: binary_sensor.attic_sensor_occupancy
-              - entity: sensor.attic_sensor_temperature
-              - entity: light.attic_1_light
-              - entity: light.attic_2_light
-            title: Attic
-    title: Default
-  - badges: []
-    cards:
-      - entities:
-          - entity: sensor.attic_last_movement
-          - entity: sensor.bathroom_last_movement
-          - entity: sensor.hall_downstairs_last_movement
-          - entity: sensor.hall_upstairs_last_movement
-          - entity: sensor.kitchen_last_movement
-          - entity: sensor.toilet_last_movement
-        title: Movement detected
-        type: entities
-      - entity: input_boolean.security
-        hold_action:
-          action: more-info
-        show_icon: false
-        show_name: true
-        show_state: true
-        tap_action:
-          action: toggle
-        type: button
-    panel: false
-    path: security
-    title: Security
-  - badges: []
-    cards:
-      - entities:
-          - entity: sensor.attic_sensor_battery
-          - entity: sensor.hall_downstairs_sensor_battery
-          - entity: sensor.hall_upstairs_sensor_battery
-          - entity: sensor.kitchen_motion_sensor_battery
-          - entity: sensor.master_bedroom_dimmer_switch_wall_battery
-          - entity: sensor.master_bedroom_dimmer_switch_nightstand_battery
-          - entity: sensor.toilet_motion_sensor_battery
-        type: entities
-    panel: false
-    path: battery
-    title: Battery
+          - type: horizontal-stack
+            cards:
+              - type: weather-forecast
+                entity: weather.home
+              - type: alarm-panel
+                states:
+                  - arm_home
+                  - arm_away
+                entity: alarm_control_panel.ha_alarm
+                name: Security
+              - type: entities
+                entities:
+                  - entity: person.rene
+                  - entity: person.elle
+                state_color: false
+                show_header_toggle: false
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                title: Living room
+                entities:
+                  - entity: light.tv_1_light
+                  - entity: light.tv_2_light
+                  - entity: light.living_room_corner_light
+                  - entity: light.dressoir_light
+                  - entity: light.living_room_radiator_light
+                  - entity: light.dining_1_light
+                  - entity: light.dining_2_light
+                  - entity: light.dining_3_light
+                  - entity: light.living_room_open_closet_light
+                  - entity: light.living_room_closet_light
+              - type: vertical-stack
+                cards:
+                  - type: entity
+                    entity: media_player.tv
+                  - type: entity
+                    entity: cover.living_room_garden_cover
+                    name: Roller shutter
+                  - type: button
+                    tap_action:
+                      action: toggle
+                    entity: switch.christmas_tree
+                    show_name: true
+                    show_state: false
+                    show_icon: true

@@ -1,0 +1,22 @@
+alias: 'Enable security'
+trigger:
+  - platform: state
+    entity_id:
+      - person.elle
+      - person.rene
+    from: 'home'
+    to: 'not_home'
+    for: 60
+condition:
+  - condition: state
+    entity_id:
+      - person.elle
+      - person.rene
+    state: 'not_home'
+  - condition: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: 'disarmed'
+action:
+  - service: alarm_control_panel.alarm_arm_away
+    entity_id: alarm_control_panel.ha_alarm
+

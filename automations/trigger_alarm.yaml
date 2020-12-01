@@ -1,0 +1,18 @@
+alias: 'Trigger alarm'
+trigger:
+  - platform: state
+    entity_id:
+      - sensor.attic_last_movement
+      - sensor.bathroom_last_movement
+      - sensor.hall_downstairs_last_movement
+      - sensor.hall_upstairs_last_movement
+      - sensor.hall_kitchen_last_movement
+      - sensor.hall_toilet_last_movement
+      - binary_sensor.pt2262_177a0a
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.ha_alarm
+    state: 'armed_away'
+action:
+  - service: alarm_control_panel.alarm_trigger
+    entity_id: alarm_control_panel.ha_alarm

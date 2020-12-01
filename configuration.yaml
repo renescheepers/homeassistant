@@ -4,9 +4,6 @@ mobile_app:
 sun:
 system_health:
 updater:
-input_boolean:
-  security:
-    name: Security
 input_datetime:
   attic_last_movement:
     name: Attic last movement detected
@@ -50,6 +47,8 @@ logger:
     homeassistant.components.rfxtrx: info
     custom_components.shelly: info
 
+alarm_control_panel:
+  - platform: manual
 
 automation: !include automations.yaml
 automation mine: !include_dir_list automations/
