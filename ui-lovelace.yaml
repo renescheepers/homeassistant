@@ -1,4 +1,3 @@
-title: Woensel
 views:
   - title: Overview
     panel: true
@@ -51,3 +50,22 @@ views:
                     show_name: true
                     show_state: false
                     show_icon: true
+          - type: horizontal-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: light.master_bedroom_light
+                  - entity: light.pc_1_light
+                  - entity: light.pc_2_light
+                show_header_toggle: false
+              - type: vertical-stack
+                cards:
+                  - type: sensor
+                    entity: sensor.pc_power
+                    graph: line
+                    name: PC
+                  - type: entity
+                    entity: >-
+                      cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
+                    name: Roller shutter
+title: Woensel
