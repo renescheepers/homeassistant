@@ -110,6 +110,21 @@ zwave:
 lovelace:
   mode: yaml
 
+group:
+  dining:
+    name: Dining
+    entities:
+      - light.dining_1_light
+      - light.dining_2_light
+      - light.dining_3_light
+  kitchen:
+    name: Kitchen
+    entities:
+      - light.kitchen_1_light
+      - light.kitchen_2_light
+      - light.kitchen_3_light
+      - light.kitchen_4_light
+
 switch:
   - platform: mqtt
     icon: mdi:lightbulb-group
@@ -129,8 +144,9 @@ switch:
     payload_off: "off"
     payload_on: "on"
   - platform: mqtt
-    icon: mdi:lightbulb-group
+    icon: mdi:pine-tree
     name: "Christmas tree"
+    unique_id: "christmas_tree"
     state_topic: "shellies/shellyplug-s-978063/relay/0"
     command_topic: "shellies/shellyplug-s-978063/relay/0/command"
     payload_off: "off"
