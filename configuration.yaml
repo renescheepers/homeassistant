@@ -113,12 +113,14 @@ lovelace:
 group:
   dining:
     name: Dining
+    icon: mdi:lightbulb-group
     entities:
       - light.dining_1_light
       - light.dining_2_light
       - light.dining_3_light
   kitchen:
     name: Kitchen
+    icon: mdi:lightbulb-group
     entities:
       - light.kitchen_1_light
       - light.kitchen_2_light
