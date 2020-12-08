@@ -1,78 +1,60 @@
+title: Woensel
 views:
   - title: Overview
-    panel: true
-    badges: []
+    panel: false
+    badges:
+      - entity: person.rene
+      - entity: person.elle
+      - entity: alarm_control_panel.ha_alarm
     cards:
+      - type: thermostat
+        entity: climate.woonkamer
+      - type: weather-forecast
+        entity: weather.home
+      - type: button
+        tap_action:
+          action: toggle
+        entity: switch.christmas_tree
+        show_name: true
+        show_state: true
+        show_icon: true
       - type: vertical-stack
         cards:
-          - type: horizontal-stack
-            cards:
-              - type: weather-forecast
-                entity: weather.home
-              - type: alarm-panel
-                states:
-                  - arm_home
-                  - arm_away
-                entity: alarm_control_panel.ha_alarm
-                name: Security
-              - type: entities
-                entities:
-                  - entity: person.rene
-                  - entity: person.elle
-                state_color: false
-                show_header_toggle: false
-          - type: horizontal-stack
-            cards:
-              - type: entities
-                title: Living room
-                entities:
-                  - entity: light.tv_1_light
-                    name: TV 1
-                  - entity: light.tv_2_light
-                    name: TV 2
-                  - entity: light.living_room_corner_light
-                    name: Corner
-                  - entity: light.dressoir_light
-                    name: Dressoir
-                  - entity: light.living_room_radiator_light
-                    name: Radiator
-                  - entity: group.dining
-                  - entity: light.living_room_open_closet_light
-                    name: Open closet
-                  - entity: light.living_room_closet_light
-                    name: Closet
-              - type: vertical-stack
-                cards:
-                  - type: entity
-                    entity: media_player.tv
-                  - type: entity
-                    entity: cover.living_room_garden_cover
-                    name: Roller shutter
-                  - type: button
-                    tap_action:
-                      action: toggle
-                    entity: switch.christmas_tree
-                    show_name: true
-                    show_state: false
-                    show_icon: true
-          - type: horizontal-stack
-            cards:
-              - type: entities
-                entities:
-                  - entity: light.master_bedroom_light
-                  - entity: light.pc_1_light
-                  - entity: light.pc_2_light
-                show_header_toggle: false
-              - type: vertical-stack
-                cards:
-                  - type: sensor
-                    entity: sensor.pc_power
-                    graph: line
-                    name: PC
-                  - type: entity
-                    entity: >-
-                      cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
-                    name: Roller shutter
+          - type: entity
+            entity: media_player.tv
+          - type: sensor
+            entity: sensor.pc_power
+            graph: line
+            name: PC
+      - type: entities
+        title: Living room
+        entities:
+          - entity: group.tv
+          - entity: group.dining
+          - entity: light.living_room_corner_light
+            name: Corner
+          - entity: light.dressoir_light
+            name: Dressoir
+          - entity: light.living_room_radiator_light
+            name: Radiator
+          - entity: light.living_room_open_closet_light
+            name: Open closet
+          - entity: light.living_room_closet_light
+            name: Closet
+      - type: entities
+        entities:
+          - entity: light.master_bedroom_light
+          - entity: light.pc_1_light
+          - entity: light.pc_2_light
+      - type: vertical-stack
+        title: Covers
+        cards:
+          - type: entity
+            entity: cover.living_room_garden_cover
+            name: Garden
+          - type: entity
+            entity: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
+            name: Master bedroom
   - title: All
     cards:
       - type: entities
@@ -117,4 +99,4 @@ views:
         entities:
           - group.dining
           - group.kitchen
-title: Woensel
+          - group.tv

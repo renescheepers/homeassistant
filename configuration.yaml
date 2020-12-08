@@ -126,6 +126,12 @@ group:
       - light.kitchen_2_light
       - light.kitchen_3_light
       - light.kitchen_4_light
+  tv:
+    name: TV
+    icon: mdi:lightbulb-group
+    entities:
+      - light.tv_1_light
+      - light.tv_2_light
 
 tado:
   username: !secret tado_username
