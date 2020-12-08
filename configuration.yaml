@@ -127,6 +127,10 @@ group:
       - light.kitchen_3_light
       - light.kitchen_4_light
 
+tado:
+  username: !secret tado_username
+  password: !secret tado_password
+
 switch:
   - platform: mqtt
     icon: mdi:lightbulb-group
