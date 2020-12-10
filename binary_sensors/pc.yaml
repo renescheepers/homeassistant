@@ -1,0 +1,4 @@
+platform: template
+name: PC
+value_template: >-
+  {{ states('sensor.pc_power')|float > 10 }}

@@ -18,14 +18,8 @@ views:
         show_name: true
         show_state: true
         show_icon: true
-      - type: vertical-stack
-        cards:
-          - type: entity
-            entity: media_player.tv
-          - type: sensor
-            entity: sensor.pc_power
-            graph: line
-            name: PC
+      - type: entity
+        entity: media_player.tv
       - type: entities
         title: Living room
         entities:
@@ -42,10 +36,15 @@ views:
           - entity: light.living_room_closet_light
             name: Closet
       - type: entities
+        title: Study
         entities:
-          - entity: light.master_bedroom_light
+          - entity: climate.studeerkamer
+          - entity: binary_sensor.pc
           - entity: light.pc_1_light
           - entity: light.pc_2_light
+      - type: entities
+        entities:
+          - entity: light.master_bedroom_light
       - type: vertical-stack
         title: Covers
         cards:
