@@ -19,4 +19,5 @@ condition:
 action:
   - service: alarm_control_panel.alarm_arm_away
     entity_id: alarm_control_panel.ha_alarm
-
+  - service: climate.turn_off
+    entity_id: climate.woonkamer

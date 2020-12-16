@@ -27,12 +27,12 @@ views:
           - entity: group.dining
           - entity: light.living_room_corner_light
             name: Corner
+          - entity: light.living_room_open_closet_light
+            name: Open closet
           - entity: light.dressoir_light
             name: Dressoir
           - entity: light.living_room_radiator_light
             name: Radiator
-          - entity: light.living_room_open_closet_light
-            name: Open closet
           - entity: light.living_room_closet_light
             name: Closet
       - type: entities
