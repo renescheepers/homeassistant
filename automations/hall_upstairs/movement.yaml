@@ -19,14 +19,14 @@ action:
               - conditions:
                   - condition: time
                     before: '08:00:00'
-                    after: '20:00:00'
+                    after: '18:00:00'
                 sequence:
                   - service: mqtt.publish
                     data:
                       topic: zigbee2mqtt/hall_upstairs/set
-                      payload: '{"brightness":50,"color_temp":400,"state":"ON"}'
+                      payload: '{"brightness":100,"color_temp":400,"state":"ON"}'
             default:
               - service: mqtt.publish
                 data:
                   topic: zigbee2mqtt/hall_upstairs/set
-                  payload: '{"brightness":255,"color_temp":50,"state":"ON"}'
+                  payload: '{"brightness":255,"color_temp":100,"state":"ON"}'
