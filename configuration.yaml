@@ -175,3 +175,13 @@ cover:
     payload_close: "close"
     payload_stop: "stop"
     retain: true
+  - platform: mqtt
+    name: "Study cover"
+    unique_id: "study_cover"
+    command_topic: "shellies/shellyswitch25-40F52022ADD6/roller/0/command"
+    position_topic: "shellies/shellyswitch25-40F52022ADD6/roller/0/pos"
+    set_position_topic: "shellies/shellyswitch25-40F52022ADD6/roller/0/command/pos"
+    payload_open: "open"
+    payload_close: "close"
+    payload_stop: "stop"
+    retain: true

@@ -54,6 +54,9 @@ views:
           - type: entity
             entity: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
             name: Master bedroom
+          - type: entity
+            entity: cover.study_cover
+            name: Study
   - title: All
     cards:
       - type: entities

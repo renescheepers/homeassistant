@@ -9,10 +9,10 @@ condition:
   - condition: numeric_state
     entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
     value_template: "{{ state.attributes.current_position }}"
-    below: 30
+    below: 60
 action:
   - device_id: b484abfe743045f89c070d4f4bd1247d
     domain: cover
     entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
-    position: 30
+    position: 60
     type: set_position
