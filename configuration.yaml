@@ -157,8 +157,8 @@ switch:
     payload_on: "on"
   - platform: mqtt
     icon: mdi:pine-tree
-    name: "Christmas tree"
-    unique_id: "christmas_tree"
+    name: "Shelly Plug 2"
+    unique_id: "shelly_plug_2"
     state_topic: "shellies/shellyplug-s-978063/relay/0"
     command_topic: "shellies/shellyplug-s-978063/relay/0/command"
     payload_off: "off"

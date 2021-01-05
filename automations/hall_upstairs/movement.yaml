@@ -11,22 +11,16 @@ action:
       datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
   - choose:
       - conditions:
-          - condition: numeric_state
-            entity_id: sensor.hall_upstairs_sensor_illuminance_lux
-            below: '10'
+          - condition: time
+            before: '10:00:00'
+            after: '17:00:00'
         sequence:
-          - choose:
-              - conditions:
-                  - condition: time
-                    before: '08:00:00'
-                    after: '18:00:00'
-                sequence:
-                  - service: mqtt.publish
-                    data:
-                      topic: zigbee2mqtt/hall_upstairs/set
-                      payload: '{"brightness":100,"color_temp":400,"state":"ON"}'
-            default:
-              - service: mqtt.publish
-                data:
-                  topic: zigbee2mqtt/hall_upstairs/set
-                  payload: '{"brightness":255,"color_temp":100,"state":"ON"}'
+          - service: mqtt.publish
+            data:
+              topic: zigbee2mqtt/hall_upstairs/set
+              payload: '{"brightness":100,"color_temp":400,"state":"ON"}'
+    default:
+      - service: mqtt.publish
+        data:
+          topic: zigbee2mqtt/hall_upstairs/set
+          payload: '{"brightness":255,"color_temp":100,"state":"ON"}'

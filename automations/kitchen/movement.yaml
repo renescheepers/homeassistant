@@ -18,8 +18,8 @@ action:
           - choose:
               - conditions:
                   - condition: time
-                    before: '08:00:00'
-                    after: '18:00:00'
+                    before: '10:00:00'
+                    after: '17:00:00'
                 sequence:
                   - service: mqtt.publish
                     data:
