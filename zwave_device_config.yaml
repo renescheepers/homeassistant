@@ -1,6 +1,6 @@
 sensor.aeon_labs_zw100_multisensor_6_relative_humidity:
   ignored: false
-  polling_intensity: 20
+  polling_intensity: 60
 cover.fibaro_system_fgrm223_roller_shutter_controller_3_level:
   ignored: false
   polling_intensity: 60
