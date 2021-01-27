@@ -20,4 +20,3 @@ include:
     - sensor.hall_downstairs_sensor_illuminance_lux
     - sensor.kitchen_motion_sensor_illuminance_lux
     - sensor.toilet_motion_sensor_illuminance_lux
-    - switch.bathroom_fan

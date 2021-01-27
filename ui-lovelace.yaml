@@ -81,7 +81,6 @@ views:
           - entity: light.tv_1_light
           - entity: light.tv_1_light
           - entity: light.tv_2_light
-          - entity: switch.bathroom_fan
           - entity: switch.bathroom_lights
       - type: entities
         title: Covers

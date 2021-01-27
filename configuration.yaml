@@ -147,22 +147,22 @@ switch:
     payload_off: "off"
     payload_on: "on"
     retain: true
-  - platform: mqtt
-    icon: mdi:fan
-    unique_id: bathroom_fan
-    name: "Bathroom fan"
-    state_topic: "shellies/shelly1-E09806965DEB/relay/0"
-    command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
-    payload_off: "off"
-    payload_on: "on"
-  - platform: mqtt
-    icon: mdi:pine-tree
-    name: "Shelly Plug 2"
-    unique_id: "shelly_plug_2"
-    state_topic: "shellies/shellyplug-s-978063/relay/0"
-    command_topic: "shellies/shellyplug-s-978063/relay/0/command"
-    payload_off: "off"
-    payload_on: "on"
+#  - platform: mqtt
+#    icon: mdi:fan
+#    unique_id: shelly1-unused
+#    name: "Bathroom fan"
+#    state_topic: "shellies/shelly1-E09806965DEB/relay/0"
+#    command_topic: "shellies/shelly1-E09806965DEB/relay/0/command"
+#    payload_off: "off"
+#    payload_on: "on"
+#  - platform: mqtt
+#    icon: mdi:pine-tree
+#    name: "Shelly Plug 2"
+#    unique_id: "shelly_plug_2"
+#    state_topic: "shellies/shellyplug-s-978063/relay/0"
+#    command_topic: "shellies/shellyplug-s-978063/relay/0/command"
+#    payload_off: "off"
+#    payload_on: "on"
 
 cover:
   - platform: mqtt
