@@ -1,7 +1,7 @@
-alias: Master bedroom weekday 07:15
+alias: Master bedroom weekday 06:45
 trigger:
   - platform: time
-    at: 07:15:00
+    at: 08:15:00
 condition:
   - condition: state
     entity_id: binary_sensor.workday
@@ -9,10 +9,10 @@ condition:
   - condition: numeric_state
     entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
     value_template: "{{ state.attributes.current_position }}"
-    below: 60
+    below: 20
 action:
   - device_id: b484abfe743045f89c070d4f4bd1247d
     domain: cover
     entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
-    position: 60
+    position: 20
     type: set_position
