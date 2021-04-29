@@ -17,7 +17,7 @@ action:
       - conditions:
           - condition: numeric_state
             entity_id: sensor.hall_downstairs_sensor_illuminance_lux
-            below: '13'
+            below: '12'
         sequence:
           - choose:
               - conditions:

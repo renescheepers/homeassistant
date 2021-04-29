@@ -1,7 +1,7 @@
 alias: Master bedroom weekday 07:00
 trigger:
   - platform: time
-    at: 08:30:00
+    at: 08:15:00
 condition:
   - condition: state
     entity_id: binary_sensor.workday

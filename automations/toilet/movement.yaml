@@ -18,7 +18,7 @@ action:
           - service: mqtt.publish
             data:
               topic: zigbee2mqtt/Toilet/set
-              payload: '{"brightness":50,"color_temp":400,"state":"ON"}'
+              payload: '{"brightness":120,"color_temp":400,"state":"ON"}'
     default:
       - service: mqtt.publish
         data:
