@@ -31,7 +31,7 @@ views:
       - type: entities
         title: Study
         entities:
-          - entity: climate.studeerkamer
+#          - entity: climate.studeerkamer
           - entity: binary_sensor.pc
           - entity: light.pc_1_light
           - entity: light.pc_2_light

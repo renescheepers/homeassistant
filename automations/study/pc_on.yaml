@@ -8,7 +8,7 @@ action:
     data:
       topic: zigbee2mqtt/study/set/state
       payload: 'ON'
-  - service: climate.set_temperature
-    data:
-      entity_id: climate.studeerkamer
-      temperature: 19
+#  - service: climate.set_temperature
+#    data:
+#      entity_id: climate.studeerkamer
+#      temperature: 19
