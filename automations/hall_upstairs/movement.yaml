@@ -18,7 +18,7 @@ action:
           - service: mqtt.publish
             data:
               topic: zigbee2mqtt/hall_upstairs/set
-              payload: '{"brightness":100,"color_temp":400,"state":"ON"}'
+              payload: '{"brightness":60,"color_temp":400,"state":"ON"}'
     default:
       - service: mqtt.publish
         data:
